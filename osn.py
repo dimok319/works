@@ -64,4 +64,3 @@ pd.set_option("display.max_colwidth", None)
 pd.set_option("display.expand_frame_repr", None)
 print(df)
 
-#то есть тут можно менять
