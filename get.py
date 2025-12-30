@@ -1,24 +1,24 @@
-#пагинации
 import pandas as pd
 import time as ti
 import requests as re
-import json
 
 url = "https://jsonplaceholder.typicode.com/posts"
 
-all = []
+items = []
 page = 1
-limit = 100
-num = 0
+limit = 20  # нормальный размер страницы
 
 while True:
-    data = re.get(url, params= {"_page": "page", "_limit":"Limit"}).json()
+    resp = re.get(url, params={"_page": page, "_limit": limit})
+    resp.raise_for_status()
+    data = resp.json()
+
     if not data:
         break
-    page += 1
-    num += 1
-    print(f"{num} проход")
-    ti.sleep(10)
+    print(f"Проход {page-1}")
+    items.extend(data)
 
-df = pd.DataFrame(all)
-print(df)
+    page += 1
+    ti.sleep(1)
+
+df = pd.DataFrame(items)
