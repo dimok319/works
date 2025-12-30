@@ -1,23 +1,24 @@
-import time
-import requests
+#пагинации
 import pandas as pd
+import time as ti
+import requests as re
+import json
 
 url = "https://jsonplaceholder.typicode.com/posts"
 
-all_posts = []
+all = []
 page = 1
-limit = 10
+limit = 100
+num = 0
 
 while True:
-    data = requests.get(url, params={"_page": "page", "_limit": "limit"}).json()
+    data = re.get(url, params= {"_page": "page", "_limit":"Limit"}).json()
     if not data:
         break
-
-    all_posts += data
     page += 1
-    print("партия прошла")
-    time.sleep(60)
+    num += 1
+    print(f"{num} проход")
+    ti.sleep(10)
 
-df = pd.DataFrame(all_posts)
-print("Всего в списке:", len(df))
-print(df.head())
+df = pd.DataFrame(all)
+print(df)
