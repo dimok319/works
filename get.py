@@ -11,7 +11,7 @@ limit = 50  # нормальный размер страницы
 
 while True:
     resp = re.get(url, params={"_page": page, "_limit": limit})
-    resp.raise_for_status()
+    resp.raise_for_status()                        											   # проверка на ошибки корректная
     data = resp.json()
 
 
@@ -22,7 +22,7 @@ while True:
 
     page += 1
     ti.sleep(2)
-    items.extend(data)
+    items.extend(data) 																															ё	#добавление всех в один файл
 
 df = pd.DataFrame(items)
 pd.set_option("display.max_row", None)
