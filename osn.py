@@ -13,9 +13,10 @@ warnings.filterwarnings("ignore")
 
 try:
     conn = sqlite3.connect(r"E:\ТРенировка.db")
-    df = pd.read_sql("select * from all_sale", conn)
+    df = pd.read_sql("select * from all_sale2", conn)
     df2 =  pd.read_sql("select * from all_sale1", conn)
-    df3 = pd.read_sql("select * from dop_data2", conn)
+    df3 = pd.read_sql("select * from dop_data", conn)
+    
     conn.close()
     print("Данные загруженны")
 
