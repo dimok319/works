@@ -15,7 +15,7 @@ try:
     conn = sqlite3.connect(r"E:\ТРенировка.db")
     df = pd.read_sql("select * from all_sale", conn)
     df2 =  pd.read_sql("select * from all_sale1", conn)
-    df3 = pd.read_sql("select * from dop_data", conn)
+    df3 = pd.read_sql("select * from dop_data2", conn)
     conn.close()
     print("Данные загруженны")
 
