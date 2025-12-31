@@ -22,7 +22,7 @@ while True:
 
     page += 1
     ti.sleep(2)
-    items.extend(data) 																															ё	#добавление всех в один файл
+    items.extend(data) 																															#добавление всех в один файл
 
 df = pd.DataFrame(items)
 pd.set_option("display.max_row", None)
