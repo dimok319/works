@@ -1,3 +1,4 @@
+# пагинация
 import pandas as pd
 import time as ti
 import requests as re
