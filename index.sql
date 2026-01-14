@@ -16,3 +16,6 @@ EXPLAIN SELECT * FROM users WHERE email = 'ivan@example.com';
 SELECT indexname, indexdef 
 FROM pg_indexes 
 WHERE tablename = 'delivery';
+
+-- Удалить индекс
+DROP INDEX имя_индекса;
