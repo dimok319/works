@@ -11,3 +11,8 @@ CREATE INDEX idx_users_email ON users(email);
 
 -- Проверяем работу индекса
 EXPLAIN SELECT * FROM users WHERE email = 'ivan@example.com';
+
+-- для выгрузки всех индексов для таблицы
+SELECT indexname, indexdef 
+FROM pg_indexes 
+WHERE tablename = 'delivery';
