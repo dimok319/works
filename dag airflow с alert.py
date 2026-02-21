@@ -11,7 +11,7 @@ CHAT_ID = "CHAT_ID"
 
 def send_telegram(msg):
     re.post(
-        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
+        f"https://api.telegram.org/bot{8012518868:AAEr1ZV_6PXTh9nv4-ce4oH21SyiAkuZ1rY}/sendMessage",
         data={"chat_id": CHAT_ID, "text": msg}
     )
 
